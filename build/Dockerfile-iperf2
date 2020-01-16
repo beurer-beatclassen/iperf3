@@ -1,0 +1,5 @@
+FROM alpine
+RUN apk add --no-cache iperf
+EXPOSE 5001/tcp
+EXPOSE 5001/udp
+CMD ["/usr/bin/iperf","-s"]

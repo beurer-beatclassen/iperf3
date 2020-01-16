@@ -1,0 +1,23 @@
+version: '3' 
+services:
+  iperf2:
+    build: 
+      context: ./build/
+      dockerfile: Dockerfile-iperf2
+    image: toastie89/iperf2
+    container_name: iperf2
+    hostname: iperf2 
+    restart: on-failure:3
+    ports:      
+      - '5001:5001'
+
+  iperf3:
+    build:
+      context: ./build/
+      dockerfile: Dockerfile-iperf3
+    image: toastie89/iperf3
+    container_name: iperf3
+    hostname: iperf3
+    restart: on-failure:3
+    ports:
+      - '5201:5201'

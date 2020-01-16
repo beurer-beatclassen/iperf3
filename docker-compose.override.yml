@@ -1,0 +1,13 @@
+version: '3'
+services:
+  iperf2:
+    networks:
+      - docker-dmz
+  iperf3:
+    networks:
+      - docker-dmz
+networks:
+  docker-dmz:
+    external:
+      name: docker-dmz
+
